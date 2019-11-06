@@ -1,69 +1,61 @@
-﻿@*@Styles.Render("~/Content/css")
-    
-    @RenderBody()
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)*@
+﻿<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+        <title>SIGEM | BI DSS</title>
+        @Styles.Render("~/Content/font-awesome")
+        @Styles.Render("~/Content/adminlte")
+        <link rel="stylesheet" href="~/Content/template/plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/Content/template/dist/css/adminlte.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
+    <body class="hold-transition sidebar-mini">
+        <div class="wrapper">
+            @Html.Partial("_TopNavbar")
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+            @Html.Partial("_Sidebar")
 
-    <title>AdminLTE 3 | Starter</title>
-    <link rel="stylesheet" href="~/Content/template/plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/Content/template/dist/css/adminlte.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        @Html.Partial("_TopNavbar")
-
-        @Html.Partial("_Sidebar")
-
-
-        <div class="content-wrapper">
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Starter Page</h1>
+            <div class="content-wrapper">
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 text-dark">Starter Page</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active">Starter Page</li>
+                                </ol>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Starter Page</li>
-                            </ol>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                @RenderBody()
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            @RenderBody()
-                        </div>
-                    </div>
+            @*<aside class="control-sidebar control-sidebar-dark">
+                <div class="p-3">
+                    <h5>Title</h5>
+                    <p>Sidebar content</p>
                 </div>
-            </div>
+            </aside>*@
+
+            @Html.Partial("_Footer")
         </div>
-        <aside class="control-sidebar control-sidebar-dark">
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-
-        @Html.Partial("_Footer")
-    </div>
-    <script src="~/Content/template/plugins/jquery/jquery.min.js"></script>
-    <script src="~/Content/template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="~/Content/template/dist/js/adminlte.min.js"></script>
-    @Scripts.Render("~/bundles/modernizr")
-</body>
-</html>
-
+        @Scripts.Render("~/Scripts/jquery")
+        @Scripts.Render("~/Scripts/bootstrap")
+        @Scripts.Render("~/Scripts/adminlte")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>
